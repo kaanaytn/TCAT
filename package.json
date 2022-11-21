@@ -1,0 +1,26 @@
+{
+  "name": "tcat",
+  "version": "1.0.0",
+  "description": "TCAT Photo App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaanaytn/TCAT.git"
+  },
+  "keywords": [
+    "photo",
+    "app"
+  ],
+  "author": "Kaan Ayten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaanaytn/TCAT/issues"
+  },
+  "homepage": "https://github.com/kaanaytn/TCAT#readme",
+  "devDependencies": {
+    "prettier": "2.7.1"
+  }
+}
