@@ -9,10 +9,20 @@ const pageControllers = require('./controllers/pageControllers');
 const app = express();
 
 // CONNECT DB
-mongoose.connect('mongodb://localhost/tcat-test-db', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(
+    'mongodb+srv://kaan:IHcludjSfcv3mA00@cluster0.iwqutri.mongodb.net/?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log('DB CONNECTED!');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // TEMPLATE ENGINE
 app.set('view engine', 'ejs');
@@ -39,7 +49,7 @@ app.get('/about', pageControllers.getAboutPage);
 app.get('/add', pageControllers.getAddPage);
 app.get('/photos/edit/:id', pageControllers.getEditPage);
 
-const port = 3000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Sunucu ${port} portunda başlatıldı.`);
 });
